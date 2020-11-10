@@ -4,7 +4,7 @@ header {
   background: #fff;
   border-bottom: #eee solid 1px;
   position: fixed;
-  position: relative;
+  /* position: relative; */
 }
 
 a {
@@ -80,7 +80,7 @@ a {
 }
 
 .overlay {
-  position: fixed;
+  position: absolute;
   top: 60px;
   bottom: 0;
   right: 45px;
