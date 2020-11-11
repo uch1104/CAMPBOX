@@ -41,10 +41,10 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'awesome_rails_console'
-  gem 'rails-erd'
+  # gem 'better_errors'
+  # gem 'binding_of_caller'
+  # gem 'awesome_rails_console'
+  # gem 'rails-erd'
 end
 
 group :test do
@@ -61,3 +61,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'pry-rails'
 gem 'rails-i18n'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
+
+
+
