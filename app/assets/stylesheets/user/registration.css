@@ -14,8 +14,8 @@ body {
 
 #new-modal {
   background-color: #fff;
-  height: 900px;
-  width: 700px;
+  height: 1000px;
+  width: 650px;
   border-radius: 10px;
   position: absolute;
   overflow: auto;
@@ -70,7 +70,7 @@ body {
 }
 
 .form-group {
-  width: 50%;
+  width: 55%;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -237,3 +237,6 @@ body {
   display: flex;
 }
 
+/* .field_with_errors {
+  display: inline;
+} */
