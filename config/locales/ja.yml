@@ -8,3 +8,15 @@ ja:
        family_name_kana: 名字(カナ)
        first_name_kana: 名前(カナ)
        birth_date: 生年月日
+     item:
+       name: 品名
+       image: 写真
+       description: 説明
+       precaution: 注意事項
+       price: 価格
+       condition_id: 状態
+       cost_id: 配送料の負担
+       prefecture_id: 発送元の地域
+       shipping_method_id: 配送方法
+       start_date: レンタル期間(開始日)
+       limit_date: レンタル期間(終了日)
