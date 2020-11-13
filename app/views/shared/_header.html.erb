@@ -11,7 +11,7 @@
       <ul class="lists-right">
       <% if user_signed_in? %>
         <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
-        <li><%= link_to '出品する', "#", class: "lend-item" %></li>
+        <li><%= link_to '出品する', "/items/new", class: "lend-item" %></li>
       <% end %>
         <span class="material-icons" id="open">menu</span>
       </ul>

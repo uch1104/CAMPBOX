@@ -1,0 +1,112 @@
+.items-rental-contents {
+  background-color: #ffffff;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 500px;
+  color: rgb(72, 72, 72)
+}
+
+.items-rental-main {
+  background-color: #FFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  width: 50%;
+  min-width: 450px;
+  padding: 10vh 8vw;
+  margin: 80px 0;
+}
+
+.items-rental-title {
+  font-size: 23px;
+  font-weight: bold;
+  border-bottom: solid 1px rgb(72, 72, 72);
+  margin-left: 15px;
+}
+
+.img-upload {
+  margin-left: 15px;
+  padding-top: 20px;
+}
+
+.item-image {
+  margin: 5px 0;
+}
+
+.items-text {
+  width: 100%;
+  padding: 16px 16px 8px;
+  border-radius: 5px;
+  border: 1px solid rgb(72, 72, 72);
+  font-size: 16px;
+  resize: none;
+}
+
+.items-detail {
+  margin-left: 15px;
+}
+
+.weight-bold-text {
+  font-weight: bold;
+  width: 500px;
+  margin-top: 20px;
+}
+
+.rental-date {
+  height: 30px;
+  color: rgb(72, 72, 72);
+  border-radius: 5px;
+  padding-left: 8px;
+  font-size: 15px;
+}
+
+.select-box {
+  height: 40px;
+  width: 70%;
+  background-color: #fff;
+  padding-left: 20px;
+  margin: 0 auto;
+  border-radius: 6px;
+  color: rgb(72, 72, 72);
+  font-size: 15px;
+}
+
+.price-input {
+  height: 30px;
+  text-align: right;
+  padding-right: 10px;
+  border-radius: 6px;
+  border: 1px solid rgb(72, 72, 72);
+  font-size: 15px;
+}
+
+.price-content {
+  width: 300px;
+  padding: 10px;
+  align-items: center;
+  
+}
+
+.sell-btn-contents {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.sell-btn {
+  background: #EE5935;
+  border: 1px solid #EE5935;
+  color: #fff;
+  width: 50%;
+  height: 50px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.sell-yen {
+  margin-left: -10px;
+}
+
