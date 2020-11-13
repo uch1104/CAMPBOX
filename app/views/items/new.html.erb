@@ -1,0 +1,114 @@
+<%= render "shared/header" %>
+
+<div class="items-rental-contents">
+
+  <div class="items-rental-main">
+    <h2 class="items-rental-title">キャンプ用品の情報を入力する</h2>
+    <%= form_with model: @item, url: items_path,local: true do |f| %>
+
+    <br>
+    <%= render 'shared/error_messages', model: f.object %>
+
+
+    <%# 画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        写真
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+    <%# /画像 %>
+    <%# 商品名と商品説明 %>
+    <div class="items-detail">
+      <div class="weight-bold-text">
+        品名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"品名（必須 40文字まで)", maxlength:"40" %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :description, class:"items-text", id:"item-info", placeholder:"キャンプ用品の説明（必須 1,000文字まで）                 例）2018年頃に5万円で購入したテントです。5〜8人用なので、ファミリーでの使用におすすめです。" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+           <div class="items-explain">
+        <div class="weight-bold-text">
+          注意事項
+          <span class="undispensable">任意</span>
+        </div>
+        <%= f.text_area :precaution, class:"items-text", id:"item-info", placeholder:"キャンプ用品の注意事項（必須 1,000文字まで）          例）使用中に付着した汚れや水分などは、できるだけきれいに取り除いてからご返却ください" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <%# /商品名と商品説明 %>
+
+    <%# 商品の詳細 %>
+    <div class="items-detail">
+      <div class="form">
+        <div class="weight-bold-text">
+          状態
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:condition_id, Condition.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+      </div>
+    </div>
+    <%# /商品の詳細 %>
+
+    <%# 配送について %>
+    <div class="items-detail">
+      <div class="form">
+        <div class="weight-bold-text">
+          発送元の地域
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+        <div class="weight-bold-text">
+          配送方法
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:shipping_method_id, ShippingMethod.all, :id, :name, {}, {class:"select-box", id:"shipping-method"}) %>
+        <div class="weight-bold-text">
+          配送料の負担
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:cost_id, Cost.all, :id, :name, {}, {class:"select-box", id:"item-cost"}) %>
+         <div class="weight-bold-text">
+          レンタル可能期間
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.date_select :start_date, {}, class: 'rental-date' %>
+        <span>〜</span>
+        <%= f.date_select :limit_date, {}, class: 'rental-date' %>
+         
+      </div>
+    </div>
+    <%# /配送について %>
+
+    <%# 販売価格 %>
+    <div class="sell-price">
+      <div>
+        <div class="price-content">
+          <div class="weight-bold-text">
+            一泊あたりの価格(¥500~)
+            <span class="indispensable">必須</span>
+          </div>
+          <span class="sell-yen">¥</span>
+          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）3000" %>
+        </div>
+      </div>
+    </div>
+    <%# /販売価格 %>
+
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "出品する" ,class:"sell-btn" %>
+      <%# <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+
+</div> 
