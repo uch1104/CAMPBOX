@@ -16,6 +16,12 @@ class Item < ApplicationRecord
     validates :limit_date
     validates :price, format: { with: /\A[0-9]+\z/ }
   end
-  validates :price, inclusion: { in: (300..9_999_999) }
-  validates :condition_id, :cost_id, :prefecture_id, :shipping_method_id, numericality: { other_than: 1 }
+  validates :price, inclusion: { in: (500..9_999_999), message: 'は¥500以上を入力してください' }
+  validates :condition_id, :cost_id, :prefecture_id, :shipping_method_id, numericality: { other_than: 1, message: 'を選択してください' }
+  validate  :after_today
+
+  def after_today
+    errors.add(:start_date, "は明日以降の日付を選択してください") if start_date < Date.today + 1
+    errors.add(:limit_date, "は開始日より後の日付を選択してください") if limit_date <= start_date
+  end
 end
