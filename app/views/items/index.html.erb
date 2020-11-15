@@ -171,10 +171,23 @@
 <% end %>
 
 
-
-<div class="main-visual">
+<%# メイン画像 %>
+<section class="main-visual">
   <div class="main-image"></div>
-</div>
+</section>
+<%# メイン画像 %>
+
+<section class="about">
+  <div class="about-inner">
+    <h2 class="about-title">
+    Share Camp とは？
+    </h2>
+    <div class="about-image">
+    </div>
+    <p class="about-text">
+  </div>
+</section>
+
 
 <div class="main-item">
   <div class="main-left">
@@ -183,36 +196,21 @@
     </div>
     <div class="pickup-list">
       <ul>
-        <li class="list">
-          <div class="item-img-content">
-          </div>
-          <div class="item-info">
-          </div>
-        </li>
-        <li class="list">
-          <div class="item-img-content">
-          </div>
-          <div class="item-info">
-          </div>
-        </li>
-        <li class="list">
-          <div class="item-img-content">
-          </div>
-          <div class="item-info">
-          </div>
-        </li>
-        <li class="list">
-          <div class="item-img-content">
-          </div>
-          <div class="item-info">
-          </div>
-        </li>
-        <li class="list">
-          <div class="item-img-content">
-          </div>
-          <div class="item-info">
-          </div>
-        </li>
+        <% @items.each do |item| %>
+          <li class="list">
+            <div class="item-img-content">
+              <%= image_tag item.image, class: "item-img" %>
+            </div>
+            <div class="item-info">
+              <h2 class="item-name">
+                <%= item.name %>
+              </h2>
+              <div class="item-price">
+                <span class="stay">1泊：</span><span>¥</span><%= item.price %>
+              </div>
+            </div>
+          </li>
+        <%end%>
       </ul>
     </div>
   </div>

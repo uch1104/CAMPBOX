@@ -4,6 +4,8 @@ header {
   background: #fff;
   border-bottom: #eee solid 1px;
   position: fixed;
+  box-shadow: 0 1px 9px rgba(0,0,0,.2);
+  opacity: 0.99;
 }
 
 .header-inner{
@@ -21,22 +23,22 @@ a {
   width: 250px;
   height: 30px;
   font-size: 40px;
-  color: black;
+  color: rgb(72, 72, 72);
   text-decoration: none;
   margin: 0 auto;
-  margin-top: 13px;
+  margin-top: 20px;
 }
 
 .search-form {
-  margin-left: 20px;
-  margin-top: 20px;
-  float: left;
+  left: 30px;
+  top: 15px;
+  position: absolute;
 }
 
 .header-menu {
   position: absolute;
   right: 30px;
-  top: 20px;
+  top: 12px;
 }
 
 .lists-right {
@@ -48,6 +50,7 @@ a {
 
 .lists-right li{
   padding: 0 15px;
+  margin-bottom: 10px;
 }
 
 .login {
@@ -65,6 +68,7 @@ a {
 .user-nickname {
   text-decoration: none;
   color: #333333;
+  padding-top: 5px;
 }
 
 .lend-item {
