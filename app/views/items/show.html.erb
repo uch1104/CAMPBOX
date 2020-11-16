@@ -52,8 +52,14 @@
   </div>
 </div>
 <div class="rental-btn-contents">
-  <button type="button" class="rental-btn">
-  <span>レンタルする</span>
-  </button>
+  <% if user_signed_in? && current_user.id == @item.user_id %>
+    <%= link_to '編集する', edit_item_path(@item.id), method: :get, class: "edit-item-btn" %>
+    <%# <p class='or-text'>or</p> %>
+    <%# <%= link_to '削除', item_path(@item.id), method: :delete, class:'item-destroy' %>
+  <% else %>
+    <button type="button" class="rental-btn">
+    <span>レンタルする</span>
+    </button>
+  <% end %>
 </div>
 <%= render "shared/footer" %>
