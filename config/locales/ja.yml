@@ -18,5 +18,6 @@ ja:
        cost_id: 配送料の負担
        prefecture_id: 発送元の地域
        shipping_method_id: 配送方法
+       category_id: カテゴリー
        start_date: レンタル期間(開始日)
        limit_date: レンタル期間(終了日)
