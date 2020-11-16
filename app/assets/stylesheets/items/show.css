@@ -1,0 +1,89 @@
+.item-show-wrapper {
+  background-color: #f5f5f5;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 500px;
+  color: rgb(72, 72, 72);
+}
+
+.item-show {
+  background-color: #FFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  width: 60%;
+  min-width: 450px;
+  padding: 10vh 8vw;
+  margin: 150px 0 60px 0;
+}
+
+.item-box-img {
+  height: 50vh;
+  width: 45vw;
+  min-height: 500px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.item-detail-name {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.detail-header {
+  background: #f5f5f5;
+  color: rgb(72, 72, 72);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 3px 20px;
+  margin-bottom: 10px;
+}
+
+.description-value {
+  padding: 10px 20px 20px 20px;
+}
+
+.item-detail {
+  padding: 20px 20px;
+  display: flex;
+  border-bottom: 1px solid #e7e1e1;
+}
+
+.item-detail-precaution {
+  padding: 20px 20px;
+  display: flex;
+}
+
+.detail-title {
+  width: 200px;
+  color: rgb(72, 72, 72);
+}
+
+.detail-value {
+  font-size: 18px;
+}
+
+.detail-precaution-value{
+  font-size: 18px;
+  width: 400px;
+}
+
+.rental-btn-contents {
+  padding-bottom: 60px;
+}
+
+.rental-btn {
+  background: #EE5935;
+  border: 1px solid #EE5935;
+  color: #fff;
+  height: 50px;
+  font-size: 16px;
+  width: 250px;
+  border-radius: 5px;
+}
+
