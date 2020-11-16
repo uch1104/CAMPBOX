@@ -5,7 +5,7 @@ header {
   border-bottom: #eee solid 1px;
   position: fixed;
   box-shadow: 0 1px 9px rgba(0,0,0,.2);
-  opacity: 0.99;
+  opacity: 0.95;
 }
 
 .header-inner{
@@ -24,6 +24,7 @@ a {
   height: 30px;
   font-size: 40px;
   color: rgb(72, 72, 72);
+  font-weight: bold;
   text-decoration: none;
   margin: 0 auto;
   margin-top: 20px;

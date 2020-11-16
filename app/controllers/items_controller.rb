@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   def index
     @user = User.new
-    @items = Item.includes(:user).order('created_at DESC')
+    @items = Item.includes(:user).order('created_at DESC').page(params[:page]).per(4)
   end
 
   def new

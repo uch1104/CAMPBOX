@@ -1,0 +1,27 @@
+footer {
+  height: 100px;
+  width: 100%;
+  background-color: #fff;
+  border-top: #eee solid 1px;;
+}
+
+.footer-content {
+  text-align: center;
+  padding-top: 25px;
+}
+
+.footer-title {
+  height: 30px;
+  font-size: 25px;
+  color: rgb(72, 72, 72);
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 15px;
+  padding-top: 3px;
+}
+
