@@ -54,8 +54,8 @@
 <div class="rental-btn-contents">
   <% if user_signed_in? && current_user.id == @item.user_id %>
     <%= link_to '編集する', edit_item_path(@item.id), method: :get, class: "edit-item-btn" %>
-    <%# <p class='or-text'>or</p> %>
-    <%# <%= link_to '削除', item_path(@item.id), method: :delete, class:'item-destroy' %>
+    <p class='or-text'>or</p>
+    <%= link_to '削除する', item_path(@item.id), method: :delete, class:'destroy-item-btn' %>
   <% else %>
     <button type="button" class="rental-btn">
     <span>レンタルする</span>
