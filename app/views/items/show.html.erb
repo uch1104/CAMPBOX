@@ -1,0 +1,59 @@
+<%= render "shared/header" %>
+<div class="item-show-wrapper">
+  <div class="item-show">
+    <div class="item-image-content">
+      <%= image_tag @item.image ,class:"item-box-img" %>
+    </div>
+    <div class="item-detail-name">
+      <%= @item.name %>
+    </div>
+    <div class="item-description">
+      <div class="detail-header">キャンプ用品の説明</div>
+      <p class="description-value"><%= @item.description %></p>
+    <div class="item-detail-box">
+      <div class="detail-header">詳細情報</div>
+      <div class="item-detail">
+        <div class="detail-title">価格(1泊)</div>
+        <div class="detail-value">¥<%= @item.price %></div>
+      </div>
+      <div class="item-detail">
+        <div class="detail-title">出品者</div>
+        <div class="detail-value"><%= @item.user.nickname %></div>
+      </div>
+      <div class="item-detail">
+        <div class="detail-title">カテゴリー</div>
+        <div class="detail-value"><%= @item.category.name %></div>
+      </div>
+      <div class="item-detail">
+        <div class="detail-title">状態</div>
+        <div class="detail-value"><%= @item.condition.name %></div>
+      </div>
+      <div class="item-detail">
+        <div class="detail-title">発送元の地域</div>
+        <div class="detail-value"><%= @item.prefecture.name %></div>
+      </div>
+      <div class="item-detail">
+        <div class="detail-title">配送方法</div>
+        <div class="detail-value"><%= @item.shipping_method.name %></div>
+      </div>
+      <div class="item-detail">
+        <div class="detail-title">配送料の負担</div>
+        <div class="detail-value"><%= @item.cost.name %></div>
+      </div>
+      <div class="item-detail">
+        <div class="detail-title">レンタル可能期間</div>
+        <div class="detail-value"><%= @item.start_date %>〜<%= @item.limit_date %></div>
+      </div>
+          <div class="item-detail-precaution">
+        <div class="detail-title">注意事項</div>
+        <div class="detail-precaution-value"><%= @item.precaution %></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="rental-btn-contents">
+  <button type="button" class="rental-btn">
+  <span>レンタルする</span>
+  </button>
+</div>
+<%= render "shared/footer" %>
