@@ -31,6 +31,12 @@ RSpec.describe User, type: :model do
         expect(@item.errors.full_messages).to include('説明を入力してください')
       end
 
+      it 'カテゴリーを選択しない場合は出品できない' do
+        @item.category_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include('カテゴリーを選択してください')
+      end
+
       it '状態を選択しない場合は出品できない' do
         @item.condition_id = 1
         @item.valid?

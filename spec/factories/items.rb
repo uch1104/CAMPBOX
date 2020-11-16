@@ -4,6 +4,7 @@ FactoryBot.define do
     price { Faker::Number.between(from: 500, to: 100_000) }
     description { Faker::Lorem.sentence }
     precaution { Faker::Lorem.sentence }
+    category_id { Faker::Number.between(from: 2, to: 13) }
     condition_id { Faker::Number.between(from: 2, to: 6) }
     cost_id { Faker::Number.between(from: 2, to: 4) }
     prefecture_id { Faker::Number.between(from: 2, to: 48) }

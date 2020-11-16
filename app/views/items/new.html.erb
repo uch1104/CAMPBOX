@@ -45,8 +45,14 @@
     </div>
     <%# /商品名と商品説明 %>
 
-    <%# 商品の詳細 %>
     <div class="items-detail">
+      <div class="form">
+        <div class="weight-bold-text">
+          カテゴリー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+      </div>
       <div class="form">
         <div class="weight-bold-text">
           状態
@@ -54,11 +60,6 @@
         </div>
         <%= f.collection_select(:condition_id, Condition.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
       </div>
-    </div>
-    <%# /商品の詳細 %>
-
-    <%# 配送について %>
-    <div class="items-detail">
       <div class="form">
         <div class="weight-bold-text">
           発送元の地域
@@ -112,3 +113,5 @@
   <% end %>
 
 </div> 
+
+<%= render "shared/footer" %>

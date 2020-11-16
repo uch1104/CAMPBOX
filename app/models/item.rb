@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :cost
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :shipping_method
+  belongs_to_active_hash :category
 
   with_options presence: true do
     validates :image
@@ -17,7 +18,7 @@ class Item < ApplicationRecord
     validates :price, format: { with: /\A[0-9]+\z/ }
   end
   validates :price, inclusion: { in: (500..100_000), message: 'に正しい値を入力してください' }
-  validates :condition_id, :cost_id, :prefecture_id, :shipping_method_id, numericality: { other_than: 1, message: 'を選択してください' }
+  validates :condition_id, :cost_id, :prefecture_id, :shipping_method_id, :category_id, numericality: { other_than: 1, message: 'を選択してください' }
   validate  :after_today
 
   def after_today

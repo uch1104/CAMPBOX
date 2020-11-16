@@ -1,12 +1,12 @@
 .items-rental-contents {
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
   font-size: 14px;
   display: flex;
   align-items: center;
   flex-direction: column;
   min-width: 500px;
-  color: rgb(72, 72, 72)
+  color: rgb(72, 72, 72);
 }
 
 .items-rental-main {
@@ -17,7 +17,7 @@
   width: 50%;
   min-width: 450px;
   padding: 10vh 8vw;
-  margin: 80px 0;
+  margin: 150px 0 60px 0;
 }
 
 .items-rental-title {
