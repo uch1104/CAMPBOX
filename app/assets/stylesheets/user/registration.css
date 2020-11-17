@@ -4,7 +4,7 @@
   border-radius: 10px;
   position: absolute;
   overflow: auto;
-  top: 40px;
+  top: 120px;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -37,7 +37,7 @@
   border-radius: 10px;
   position: absolute;
   overflow: auto;
-  top: 40px;
+  top: 120px;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -214,7 +214,6 @@
   cursor: pointer;
 }
 
-/* 共通 */
 .indispensable {
   background: #EE5935;
   margin-left: 8px;
@@ -261,3 +260,5 @@
 /* .field_with_errors {
   display: inline;
 } */
+
+
