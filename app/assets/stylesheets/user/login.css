@@ -23,7 +23,7 @@
   background-color: #fff;
   width: 700px;
   border-radius: 10px;
-  position: absolute;
+  position: fixed;
   overflow: auto;
   top: 120px;
   left: 0;
