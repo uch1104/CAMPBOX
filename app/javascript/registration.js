@@ -11,6 +11,7 @@ const registration = () => {
   openRegistration.addEventListener('click', () => {
     selectModal.classList.remove('hidden');
     mask.classList.remove('hidden');
+    // body.style.overflowY = 'hidden';
   });
 
   emailRegistration.addEventListener('click', () => {
@@ -21,6 +22,7 @@ const registration = () => {
   openSession.addEventListener('click', () => {
     sessionModal.classList.remove('hidden');
     mask.classList.remove('hidden');
+    // body.style.overflowY = 'hidden';
   });
 
   mask.addEventListener('click', () => {
@@ -28,6 +30,7 @@ const registration = () => {
     sessionModal.classList.add('hidden');
     mask.classList.add('hidden');
     selectModal.classList.add('hidden');
+    // body.style.overflowY = '';
   });
 
 }
