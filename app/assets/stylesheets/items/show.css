@@ -78,7 +78,7 @@
   height: 20vh;
 }
 
-.rental-btn {
+#rental-btn {
   background: #EE5935;
   border: 1px solid #EE5935;
   color: #fff;
@@ -113,6 +113,114 @@
   padding: 1.5vh 6vw;
   margin: 10px 0;
   display: block;
+}
+
+#mask {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#date-select-modal {
+  background-color: #fff;
+  height: 350px;
+  width: 650px;
+  border-radius: 10px;
+  position: fixed;
+  overflow: auto;
+  top: 300px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 2;
+  transition: .5s cubic-bezier(0, 0.63, 0.39, 1.02);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+#mask.hidden {
+  display: none;
+}
+
+#date-select-modal.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0);
+  transition: .3s cubic-bezier(.25,.8,.25,1);
+}
+
+.date-header {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.date-header-text {
+  line-height: 100px;
+  border-bottom: 1px solid #f5f5f5;
+  font-weight: bold;
+}
+
+.rental-date-select {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.rental-btn {
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.rental-red-btn {
+  width: 100%;
+  background: #EE5935;
+  border: 1px solid #EE5935;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.result-header {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 50px 0;
+}
+
+.rental-date-result {
+  font-size: 20px;
+  margin: 0 auto;
+  border: 1px solid #535150;
+  padding: 15px;
+}
+
+.link_to_toppage {
+  margin: 0 auto;
+  margin-top: 60px;
+  font-size: 15px;
+  background: #EE5935;
+  border: 1px solid #EE5935;
+  width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.toppage {
+  color: #fff;
+}
+
+.result-wrapper {
+  height: 100vh;
 }
 
 

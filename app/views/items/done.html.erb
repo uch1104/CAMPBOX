@@ -1,0 +1,17 @@
+<%= render "shared/header" %>
+<div class="result-wrapper">
+  <div id="mask"></div>
+  <div class='form-wrap' id="date-select-modal">
+    <div class='result-header'>
+        以下の日程でレンタル申込が完了しました
+    </div>
+    <div class="rental-date-result">
+      <%= @order.rental_start_date %> 〜 <%= @order.rental_limit_date %>
+    </div>
+    <div class="link_to_toppage">
+      <%= link_to 'トップページへ戻る', root_path, class:"toppage"%>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
