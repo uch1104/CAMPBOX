@@ -5,7 +5,12 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root to: "items#index"
-  resources :items
+  resources :items do
+    member do
+      post 'order'
+      get 'done'
+    end
+  end
   resources :users, only: [:show, :edit, :update]
   resources :cards, only: [:new, :create, :show]
 end
