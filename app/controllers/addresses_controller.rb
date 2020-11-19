@@ -1,4 +1,6 @@
 class AddressesController < ApplicationController
+  before_action :set_address, only: [:show, :edit, :update]
+
   def new
     @address = Address.new
   end
@@ -13,17 +15,27 @@ class AddressesController < ApplicationController
   end
 
   def show
-    @address = Address.find(params[:id])
   end
 
   def edit
-    @address = Address.find(params[:id])
+  end
+
+  def update
+    if @address.update(address_params)
+      redirect_to address_path(@address.id)
+    else
+      render :edit
+    end
   end
 
   private
 
   def address_params
     params.require(:address).permit(:post_code, :prefecture_id, :city, :house_number, :building_name, :phone_number).merge(user_id: current_user.id)
+  end
+
+  def set_address
+    @address = Address.find(params[:id])
   end
 
 end
