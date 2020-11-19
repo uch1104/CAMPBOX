@@ -24,3 +24,10 @@ ja:
      order:
        rental_start_date: レンタル開始希望日
        rental_limit_date: レンタル開始終了日
+     address:
+       post_code: 郵便番号
+       prefecture_id: 都道府県
+       city: 市区町村
+       house_number: 番地
+       building_name: 建物名
+       phone_number: 電話番号
