@@ -18,6 +18,7 @@ class User < ApplicationRecord
   has_many :items
   has_one :card, dependent: :destroy
   has_many :orders
+  has_one :address, dependent: :destroy
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
