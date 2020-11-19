@@ -1,12 +1,13 @@
 .mypage-wrap {
   width: 100%;
-  min-height: 100vh;
+  display: flex;
   background-color: #f5f5f5;
+  margin-bottom: 60px;
 }
+
 
 .mypage-container {
   width: 1000px;
-  min-height: 900px;
   margin: 0 auto;
   padding-top: 150px;
 
@@ -43,7 +44,7 @@
 #mypage-icon {
   position: absolute;
   right: 0;
-  bottom: 0;
+  top: 10px;
   font-size: 30px;
   color: #333;
 }
@@ -55,7 +56,7 @@
   display: flex;
   flex-direction: column;
   float: right;
-  height: 650px;
+  min-height: 650px;
   width: 700px;
   z-index: 2;
   margin: 0 auto;
@@ -69,7 +70,8 @@
 
 .update-btn {
   width: 50%;
-  margin: 50px auto;
+  margin: 0 auto;
+  margin-top: 50px;
 }
 
 .register-btn {
@@ -122,4 +124,39 @@
 
 .credit-number {
   font-size: 18px;
+}
+
+#address-prefecture {
+  border: 1px solid #ccc;
+  color: #757575;
+}
+
+.address-value {
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+.address-group {
+  width: 55%;
+  display: flex;
+  margin: 0 auto;
+  padding-top: 30px;
+  flex-direction: column;
+}
+
+.address-edit-btn {
+  margin: 0 auto;
+  margin-top: 70px;
+}
+
+.address-red-btn {
+  width: 100%;
+  background: #EE5935;
+  border: 1px solid #EE5935;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 20px 60px;
+  margin: 0 auto;
 }

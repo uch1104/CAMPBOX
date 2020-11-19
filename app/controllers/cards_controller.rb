@@ -1,5 +1,7 @@
 class CardsController < ApplicationController
+
   def new
+    @address = current_user.address
   end
 
   def create
@@ -29,7 +31,13 @@ class CardsController < ApplicationController
       
     customer = Payjp::Customer.retrieve(card.customer_token)
     @card = customer.cards.first
+    @address = current_user.address
   end
+  
+  private
 
+  def set_address
+    @address = current_user.address
+  end
 
 end
