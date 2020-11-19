@@ -1,36 +1,7 @@
 <%= render "shared/header" %>
 <div class="mypage-wrap">
   <div class="mypage-container">
-    <div class="mypage-side">
-      <nav class="mypage-nav">
-        <ul class="mypage-nav-list">
-          <li>
-            <a href=user_path(current_user.id), class="mypage-link">マイページ<span class="material-icons" id="mypage-icon">navigate_next</span></a>
-          </li>
-          <li>
-            <a href=user_path(current_user.id), class="mypage-link">出品一覧<span class="material-icons" id="mypage-icon">navigate_next</span></a>
-          </li>
-        <li>
-            <a href=user_path(current_user.id), class="mypage-link">取引履歴<span class="material-icons" id="mypage-icon">navigate_next</span></a>
-          </li>
-          <li>
-            <a href=user_path(current_user.id), class="mypage-link">お気に入り<span class="material-icons" id="mypage-icon">navigate_next</span></a>
-          </li>
-          <li>
-            <a href=user_path(current_user.id), class="mypage-link">メッセージ<span class="material-icons" id="mypage-icon">navigate_next</span></a>
-          </li>
-          <li>
-            <a href=user_path(current_user.id), class="mypage-link">クレジットカード<span class="material-icons" id="mypage-icon">navigate_next</span></a>
-          </li>
-          <li>
-            <a href=user_path(current_user.id), class="mypage-link">お届け先住所<span class="material-icons" id="mypage-icon">navigate_next</span></a>
-          </li>
-          <li>
-            <a href="edit", class="mypage-link">ログイン情報<span class="material-icons" id="mypage-icon">navigate_next</span></a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <%= render "shared/mypage_side" %>
     <div class='mypage-main'>  
       <div class='form-header'>
         <h1 class='form-header-text'>
