@@ -43,6 +43,7 @@ class ItemsController < ApplicationController
   def order
     @order = Order.new(order_params)
     redirect_to new_card_path and return unless current_user.card.present?
+    redirect_to new_address_path and return unless current_user.address.present?
     if @order.valid?
       pay_item
       @order.save
