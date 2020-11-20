@@ -5,3 +5,24 @@
   background-size: cover;
 }
 
+.about-inner {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.about-image {
+  margin: 0 auto;
+  width: 850px;
+}
+
+.description-image {
+  width: 850px;
+  mix-blend-mode: multiply;
+}
+
+.about-text {
+  padding: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+
