@@ -1,0 +1,69 @@
+<div class="mypage-side">
+      <nav class="mypage-nav">
+        <ul class="mypage-nav-list">
+          <li>
+            <%= link_to '' do %>
+            <div class="mypage-link">マイページ</div>
+            <span class="material-icons" id="mypage-icon">navigate_next</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to '' do %>
+            <div class="mypage-link">出品一覧</div>
+            <span class="material-icons" id="mypage-icon">navigate_next</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to '' do %>
+            <div class="mypage-link">取引履歴</div>
+            <span class="material-icons" id="mypage-icon">navigate_next</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to '' do %>
+            <div class="mypage-link">お気に入り</div>
+            <span class="material-icons" id="mypage-icon">navigate_next</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to '' do %>
+            <div class="mypage-link">メッセージ</div>
+            <span class="material-icons" id="mypage-icon">navigate_next</span>
+            <% end %>
+          </li>
+          <li>
+          <%if current_user.card.present? %>
+            <%= link_to card_path(current_user.id) do %>
+            <div class="mypage-link">クレジットカード</div>
+            <span class="material-icons" id="mypage-icon">navigate_next</span>
+            <% end %>
+          <% else %>
+            <%= link_to new_card_path do %>
+            <div class="mypage-link">クレジットカード</div>
+            <span class="material-icons" id="mypage-icon">navigate_next</span>
+            <% end %>
+          <% end %>
+          </li>
+          <li>
+          <%if current_user.address.present? %>
+            <%= link_to address_path(@address.id) do %>
+            <div class="mypage-link">お届け先住所</div>
+            <span class="material-icons" id="mypage-icon">navigate_next</span>
+            <% end %>
+          <% else %>
+            <%= link_to new_address_path do %>
+            <div class="mypage-link">お届け先住所</div>
+            <span class="material-icons" id="mypage-icon">navigate_next</span>
+            <% end %>
+          <% end %>
+          </li>
+          <li>
+            <%= link_to edit_user_registration_path do %>
+            <div class="mypage-link">ログイン情報</div>
+            <span class="material-icons" id="mypage-icon">navigate_next</span>
+            <% end %>
+          </li>
+        </ul>
+      </nav>
+ </div>
+

@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :order]
   before_action :move_to_index, only: [:edit, :destroy]
 
   def index
@@ -21,6 +21,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @order = Order.new
   end
 
   def edit
@@ -39,6 +40,23 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
 
+  def order
+    @order = Order.new(order_params)
+    redirect_to new_card_path and return unless current_user.card.present?
+    redirect_to new_address_path and return unless current_user.address.present?
+    if @order.valid?
+      pay_item
+      @order.save
+      render :done
+    else
+      render :order
+    end
+  end
+
+  def done
+    @order = Order.find(params[:id])
+  end
+
   private
 
   def item_params
@@ -52,5 +70,20 @@ class ItemsController < ApplicationController
   def move_to_index
     redirect_to action: :index unless current_user.id == @item.user_id
   end
+
+  def order_params
+    params.require(:order).permit(:rental_start_date, :rental_limit_date).merge(item_id: params[:id], user_id: current_user.id)
+  end
+
+  def pay_item
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    customer_token = current_user.card.customer_token
+    Payjp::Charge.create(
+      amount: @item.price,
+      customer: customer_token,
+      currency: 'jpy' 
+      )
+  end
+
 
 end

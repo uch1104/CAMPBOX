@@ -57,9 +57,32 @@
     <p class='or-text'>or</p>
     <%= link_to '削除する', item_path(@item.id), method: :delete, class:'destroy-item-btn' %>
   <% else %>
-    <button type="button" class="rental-btn">
-    <span>レンタルする</span>
+    <button type="button" id="rental-btn">
+      <span>レンタルする</span>
     </button>
+  <% end %>
+</div>
+
+<div id="mask" class="hidden"></div>
+
+<div class='form-wrap hidden' id="date-select-modal">
+  <div class='date-header'>
+    <h2 class='date-header-text'>
+      希望の日付を選択してください
+    </h2>
+  </div>
+  <%= form_with model: @order, url: order_item_path(@item.id), method: :post, local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+    <div class="rental-date-select">
+      <%= f.date_select :rental_start_date, {}, class: 'rental-date' %>
+      <span>〜</span>
+      <%= f.date_select :rental_limit_date, {}, class: 'rental-date' %>
+    </div>
+
+    <div class='rental-btn'>
+      <%= f.submit "レンタルを確定する" ,class:"rental-red-btn" %>
+    </div>
   <% end %>
 </div>
 <%= render "shared/footer" %>

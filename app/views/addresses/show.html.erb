@@ -1,0 +1,29 @@
+<%= render "shared/header" %>
+<div class="mypage-wrap">
+  <div class="mypage-container">
+    <%= render "shared/mypage_side" %>
+    <div class='mypage-main'> 
+      <div class='form-header'>
+        <h1 class='form-header-text'>
+          お届け先住所
+        </h1>
+      </div>
+        <div class="address-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">住所</label>
+          </div>
+          <div class="address-value">〒<%= @address.post_code %><br><%= @address.prefecture.name %><%= @address.city %><%= @address.house_number %><%= @address.building_name %></div>
+        </div>
+        <div class="address-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">電話番号</label>
+          </div>
+          <div class="address-value"><%= @address.phone_number %></div>
+        </div>
+        <div class="address-edit-btn">
+          <%= link_to '変更する', edit_address_path(@address.id), method: :get, class: "address-red-btn" %>
+        </div> 
+    </div>
+  </div>
+</div>
+<%= render "shared/footer" %>

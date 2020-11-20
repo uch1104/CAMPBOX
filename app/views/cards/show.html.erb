@@ -1,0 +1,34 @@
+<%= render "shared/header" %>
+<div class="mypage-wrap">
+  <div class="mypage-container">
+    <%= render "shared/mypage_side" %>
+    <div class='mypage-main'> 
+      <div class='form-header'>
+        <h1 class='form-header-text'>
+          クレジットカード情報
+        </h1>
+      </div>
+        <div class='card-group'>
+          <div class='form-text-wrap'>
+            <label class="form-text">カード番号</label>
+          </div>
+          <br>
+          <span class="credit-number"><%= "**** **** **** " + @card[:last4] %></span>
+        </div>
+        <div class='card-group'>
+          <div class='form-text-wrap'>
+            <label class="form-text">有効期限</label>
+          </div>
+          <div class='input-expiration-date-wrap'>
+          <br>
+            <%= @card[:exp_month] %>
+            <p class="year">月</p>
+          <br>
+            <%= @card[:exp_year] %>
+            <p class="year">年</p>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+<%= render "shared/footer" %>

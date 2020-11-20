@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   def show
     @nickname = current_user.nickname
     @items = current_user.items
+    @user = User.find(params[:id])
+    @address = current_user.address
   end
 
   def edit
@@ -15,7 +17,7 @@ class UsersController < ApplicationController
       redirect_to "edit" 
     end
   end
-
+ 
   private
 
   def user_params
