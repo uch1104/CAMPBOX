@@ -17,6 +17,7 @@
 
 .description-image {
   width: 850px;
+  mix-blend-mode: multiply;
 }
 
 .about-text {
