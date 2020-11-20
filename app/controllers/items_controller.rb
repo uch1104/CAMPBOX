@@ -44,6 +44,7 @@ class ItemsController < ApplicationController
     @order = Order.new(order_params)
     redirect_to new_card_path and return unless current_user.card.present?
     redirect_to new_address_path and return unless current_user.address.present?
+
     if @order.valid?
       pay_item
       @order.save
@@ -76,14 +77,12 @@ class ItemsController < ApplicationController
   end
 
   def pay_item
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     customer_token = current_user.card.customer_token
     Payjp::Charge.create(
       amount: @item.price,
       customer: customer_token,
-      currency: 'jpy' 
-      )
+      currency: 'jpy'
+    )
   end
-
-
 end

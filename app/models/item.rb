@@ -23,7 +23,7 @@ class Item < ApplicationRecord
   validate  :after_today
 
   def after_today
-    errors.add(:start_date, "は明日以降の日付を選択してください") if start_date < Date.today + 1
-    errors.add(:limit_date, "は開始日より後の日付を選択してください") if limit_date <= start_date
+    errors.add(:start_date, 'は明日以降の日付を選択してください') if start_date < Date.today + 1
+    errors.add(:limit_date, 'は開始日より後の日付を選択してください') if limit_date <= start_date
   end
 end

@@ -21,7 +21,7 @@ RSpec.describe Address, type: :model do
       it '郵便番号がない場合は登録できない' do
         @address.post_code = nil
         @address.valid?
-        expect(@address.errors.full_messages).to include("郵便番号を入力してください")
+        expect(@address.errors.full_messages).to include('郵便番号を入力してください')
       end
 
       it '郵便番号が半角のハイフンを含んだ正しい形式でないと登録できない' do
@@ -39,19 +39,19 @@ RSpec.describe Address, type: :model do
       it '市区町村がない場合は登録できない' do
         @address.city = nil
         @address.valid?
-        expect(@address.errors.full_messages).to include("市区町村を入力してください")
+        expect(@address.errors.full_messages).to include('市区町村を入力してください')
       end
 
       it '番地がない場合は登録できない' do
         @address.house_number = nil
         @address.valid?
-        expect(@address.errors.full_messages).to include("番地を入力してください")
+        expect(@address.errors.full_messages).to include('番地を入力してください')
       end
 
       it '電話番号がない場合は登録できない' do
         @address.phone_number = nil
         @address.valid?
-        expect(@address.errors.full_messages).to include("電話番号を入力してください")
+        expect(@address.errors.full_messages).to include('電話番号を入力してください')
       end
 
       it '電話番号が全角数字だと登録できない' do

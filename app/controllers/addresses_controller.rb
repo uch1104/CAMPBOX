@@ -8,7 +8,7 @@ class AddressesController < ApplicationController
   def create
     @address = Address.new(address_params)
     if @address.save
-      redirect_to user_path(current_user.id) 
+      redirect_to user_path(current_user.id)
     else
       render :new
     end
@@ -37,5 +37,4 @@ class AddressesController < ApplicationController
   def set_address
     @address = Address.find(params[:id])
   end
-
 end
