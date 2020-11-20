@@ -26,4 +26,12 @@ class Item < ApplicationRecord
     errors.add(:start_date, 'は明日以降の日付を選択してください') if start_date < Date.today + 1
     errors.add(:limit_date, 'は開始日より後の日付を選択してください') if limit_date <= start_date
   end
+
+  def self.search(search)
+    if search != ""
+      Item.where('name LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
 end
