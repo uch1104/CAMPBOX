@@ -10,6 +10,9 @@ Rails.application.routes.draw do
       post 'order'
       get 'done'
     end
+    collection do
+      get 'search'
+    end
   end
   resources :users, only: [:show, :edit, :update]
   resources :cards, only: [:new, :create, :show]
