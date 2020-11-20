@@ -13,6 +13,7 @@ FactoryBot.define do
     start_date { future_date }
     limit_date { Faker::Date.between(from: future_date, to: '2030-01-01') }
     association :user
+    
 
     after(:build) do |item|
       item.image.attach(io: File.open('public/images/camp-image.jpeg'), filename: 'camp-image.jpeg')
