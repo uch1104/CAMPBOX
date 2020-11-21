@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy, :order]
   before_action :move_to_index, only: [:edit, :destroy]
+  before_action :move_to_session, only: [:new, :order]
 
   def index
     @user = User.new
@@ -89,4 +90,9 @@ class ItemsController < ApplicationController
       currency: 'jpy'
     )
   end
+
+  def move_to_session
+    redirect_to new_user_session_path unless user_signed_in?
+  end
 end
+

@@ -11,8 +11,18 @@
     <div class="header-menu">
       <ul class="lists-right">
       <% if user_signed_in? %>
-        <li><%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %></li>
-        <li><%= link_to '出品する', "/items/new", class: "lend-item" %></li>
+        <li>
+          <%= link_to user_path(current_user.id), class:"link-mypage" do%>
+            <img src="/images/mypage.png" alt="人" class="mypage-icon">
+            <span class="user-nickname">マイページ</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_item_path do%>
+            <img src="/images/tent1.png" alt="テント" class="tent-icon">
+            <span class="lend-item">出品する</span>
+          <% end %>
+        </li>
       <% end %>
         <span class="material-icons" id="open">menu</span>
       </ul>
@@ -21,12 +31,12 @@
       <nav>
         <ul>
           <% if user_signed_in? %>
-            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete,  class: "logout" %></li>
-            <li><%= link_to 'ヘルプ', "#", class: "logout" %></li>
+            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete,  class: "login-icon" %></li>
+            <li><%= link_to 'ヘルプ', "#", class: "login-icon" %></li>
           <% else %>
-            <li class="logout" id="open-registration">会員登録</li>
-            <li class="logout" id="open-session">ログイン</li>
-            <li><%= link_to 'ヘルプ', "#", class: "logout" %></li>
+            <li class="login-icon" id="open-registration">会員登録</li>
+            <li class="login-icon" id="open-session">ログイン</li>
+            <li><%= link_to 'ヘルプ', "#", class: "login-icon" %></li>
           <% end %>
         </ul>
       </nav>
