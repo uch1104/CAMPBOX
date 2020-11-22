@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   resources :cards, only: [:new, :create, :show]
   resources :addresses
+  resources :messages, only: [:create]
+  resources :rooms, only: [:create,:show]
 end
