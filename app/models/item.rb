@@ -34,4 +34,12 @@ class Item < ApplicationRecord
       Item.all
     end
   end
+
+  def self.divide(category_id)
+    if search
+      Item.where(category_id: category_id)
+    else
+      Item.all
+    end
+  end
 end
