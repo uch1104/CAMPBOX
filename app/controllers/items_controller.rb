@@ -60,7 +60,11 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.search(params[:keyword])
+    @items = Item.search(params[:keyword]).order('created_at DESC')
+  end
+
+  def divide
+    @items = Item.where(category_id: params[:category_id]).order('created_at DESC')
   end
 
   private

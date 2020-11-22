@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     end
     collection do
       get 'search'
+      get 'divide'
     end
   end
   resources :users, only: [:show, :edit, :update]
