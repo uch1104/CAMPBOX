@@ -1,0 +1,35 @@
+<div class="mypage-wrap">
+  <div class="mypage-container">
+    <div class='another-page-main'>
+      <div class='form-header'>
+        <h1 class='form-header-text'>
+          <%= @room.users.where.not(id: current_user.id).pluck(:nickname).join("")+"さんとのメッセージ" %>
+        </h1>
+      </div>
+      <div class="dm-message-main">
+        <% if @messages.present? %>
+          <% @messages.each do |m| %>
+          <div class="message-upper">
+            <div class="user-name"><a href="/users/<%= m.user_id %>", class="user-name"><%= m.user.nickname %></a></div>
+            <div class="update-time"><%= l m.created_at %></div>
+            <% if current_user.id == m.user_id %>
+            <div class="message-delete"><%= link_to '削除', message_path(m.id), method: :delete, class:'destroy-message-btn' %></div>
+            <% end %>
+          </div>
+          <div class="message-content"><%= m.content %></div>
+            <br>
+          <% end %>
+        <% else %>
+          <h3 class="text-center">メッセージはまだありません</h3>
+        <% end %>
+      </div>
+    </div>
+    <div class="message-post">
+      <%= form_for @message do |f| %>
+        <%= f.text_field :content, placeholder:"メッセージを入力して下さい", class: "message-text" %>
+        <%= f.hidden_field :room_id, :value => @room.id %>
+        <%= f.submit "送信する", class:"message-send-btn"%>
+      <% end %>
+    </div>
+  </div>
+</div>

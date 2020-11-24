@@ -1,4 +1,5 @@
 <div class="mypage-wrap">
+<% if @user.id == current_user.id %>
   <div class="mypage-container">
     <%= render "shared/mypage_side" %>
     <div class='mypage-main'> 
@@ -7,6 +8,32 @@
           マイページ
         </h1>
       </div>
+      <div>
+        <%= current_user.nickname%>
+      </div>
     </div>
   </div>
+<% else %>
+  <div class="mypage-container">
+    <div class='another-page-main'> 
+      <div class='form-header'>
+        <h1 class='form-header-text'>
+          <%= @user.nickname + "さんのページ" %>
+        </h1>
+      </div>
+      <div class="mypage-dm">
+          <% if @isRoom == true %>
+            <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="dm-btn">メッセージを送る</a>
+          <% else %>
+            <%= form_with model: @room, url: rooms_path, local: true do |f| %>
+              <%= fields_for @entry do |e| %>
+                <%= e.hidden_field :user_id, value: @user.id %>
+              <% end %>
+              <%= f.submit "メッセージを送る", class:"dm-btn"%>
+            <% end %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
 </div>

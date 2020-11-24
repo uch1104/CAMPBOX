@@ -17,7 +17,7 @@
       </div>
       <div class="item-detail">
         <div class="detail-title">出品者</div>
-        <div class="detail-value"><%= @item.user.nickname %></div>
+        <div class="detail-value"><%= link_to @item.user.nickname, user_path(@item.user_id) %></div>
       </div>
       <div class="item-detail">
         <div class="detail-title">カテゴリー</div>
