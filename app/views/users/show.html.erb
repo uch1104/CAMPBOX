@@ -1,4 +1,5 @@
 <div class="mypage-wrap">
+<% if @user.id == current_user.id %>
   <div class="mypage-container">
     <%= render "shared/mypage_side" %>
     <div class='mypage-main'> 
@@ -7,6 +8,76 @@
           マイページ
         </h1>
       </div>
+      <div class='my-information'>
+        <div class="my-information-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">ニックネーム</label>
+          </div>
+          <div class="my-information-value"><%= @user.nickname %></div>
+        </div>
+        <div class="my-information-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">お名前</label>
+          </div>
+          <div class="my-information-value"><%= @user.family_name %><%= @user.first_name %></div>
+        </div>
+        <div class="my-information-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">お名前カナ</label>
+          </div>
+          <div class="my-information-value"><%= @user.family_name_kana %><%= @user.first_name_kana %></div>
+        </div>
+        <div class="my-information-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">生年月日</label>
+          </div>
+          <div class="my-information-value"><%= @user.birth_date %></div>
+        </div>
+      </div>
     </div>
   </div>
+<% else %>
+  <div class="mypage-container">
+    <div class='another-page-main'> 
+      <div class='form-header'>
+        <h1 class='form-header-text'>
+          <%= @user.nickname + "さんのページ" %>
+        </h1>
+      </div>
+      <div class="pickup-list">
+        <ul>
+          <% @user.items.each do |item| %>
+            <li class="list">
+              <%= link_to item_path(item.id) do %>
+                <div class="item-img-content">
+                  <%= image_tag item.image, class: "item-img" %>
+                </div>
+                <div class="item-info">
+                  <h2 class="item-name">
+                    <%= item.name %>
+                  </h2>
+                  <div class="item-price">
+                    <span>¥</span><%= item.price %><span class="stay">/1泊</span>
+                  </div>
+                </div>
+              <% end %>
+            </li>
+          <%end%>
+        </ul>
+      </div>
+      <div class="mypage-dm">
+          <% if @isRoom == true %>
+            <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="dm-btn">メッセージを送る</a>
+          <% else %>
+            <%= form_with model: @room, url: rooms_path, local: true do |f| %>
+              <%= fields_for @entry do |e| %>
+                <%= e.hidden_field :user_id, value: @user.id %>
+              <% end %>
+              <%= f.submit "メッセージを送る", class:"dm-btn"%>
+            <% end %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
 </div>

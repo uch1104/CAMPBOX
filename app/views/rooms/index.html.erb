@@ -1,0 +1,30 @@
+<div class="mypage-wrap">
+  <div class="mypage-container">
+    <%= render "shared/mypage_side" %>
+    <div class='mypage-main'> 
+      <div class='form-header'>
+        <h1 class='form-header-text'>
+          メッセージ一覧
+        </h1>
+      </div>
+      <div class="rooms">
+        <% if current_user.rooms.present? %>
+          <% @rooms.each do |room|%>
+            <%= link_to room_path(room.id) do %>
+              <div class="room">
+                <div class="room-name">
+                  <%= room.users.where.not(id: current_user.id).pluck(:nickname).join("") %>
+                </div>
+                <%# <div class="message-time">
+                  <%= room.messages.where.not(id: current_user.id).pluck(:created_at).join("") %>
+                <%# </div> %>
+              </div>
+            <% end %>
+          <% end %>
+        <% else %>
+         <p>現在、メッセージはありません</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
