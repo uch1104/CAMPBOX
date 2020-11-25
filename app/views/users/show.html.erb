@@ -21,6 +21,27 @@
           <%= @user.nickname + "さんのページ" %>
         </h1>
       </div>
+      <div class="pickup-list">
+        <ul>
+          <% @user.items.each do |item| %>
+            <li class="list">
+              <%= link_to item_path(item.id) do %>
+                <div class="item-img-content">
+                  <%= image_tag item.image, class: "item-img" %>
+                </div>
+                <div class="item-info">
+                  <h2 class="item-name">
+                    <%= item.name %>
+                  </h2>
+                  <div class="item-price">
+                    <span>¥</span><%= item.price %><span class="stay">/1泊</span>
+                  </div>
+                </div>
+              <% end %>
+            </li>
+          <%end%>
+        </ul>
+      </div>
       <div class="mypage-dm">
           <% if @isRoom == true %>
             <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="dm-btn">メッセージを送る</a>

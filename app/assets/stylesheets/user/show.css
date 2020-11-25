@@ -18,6 +18,13 @@
   float: left;
 }
 
+.mypage-item-list {
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 30px;
+
+}
+
 .mypage-nav-list li {
   position: relative;
   display: block;
@@ -174,7 +181,7 @@
 }
 
 .mypage-dm {
-  margin: 100px auto;
+  margin: 30px auto;
 }
 
 .dm-btn {
@@ -186,3 +193,4 @@
   cursor: pointer;
   padding: 15px 40px;
 }
+
