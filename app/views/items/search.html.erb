@@ -3,7 +3,7 @@
   <div class="pickup-list">
     <ul>
       <% @items.each do |item| %>
-        <li class="list">
+        <li class="search-list">
           <%= link_to item_path(item.id) do %>
             <div class="item-img-content">
               <%= image_tag item.image, class: "item-img" %>

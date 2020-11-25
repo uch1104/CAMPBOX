@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  min-width: 500px;
+  max-width: 100%;
   color: rgb(72, 72, 72);
 }
 
@@ -14,14 +14,13 @@
   border-radius: 3px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
   width: 60%;
-  min-width: 450px;
   padding: 10vh 8vw;
   margin: 150px 0 50px 0;
 }
 
 .item-box-img {
   height: 50vh;
-  width: 44vw;
+  width: 100%;
   min-height: 500px;
   margin: 0 auto;
   object-fit: contain;
@@ -128,7 +127,7 @@
 #date-select-modal {
   background-color: #fff;
   height: 350px;
-  width: 650px;
+  width: 45%;
   border-radius: 10px;
   position: fixed;
   overflow: auto;
@@ -223,4 +222,19 @@
   height: 100vh;
 }
 
+@media (max-width: 1024px) {
+  .item-show {
+    width: 80%;
+  }
 
+  #date-select-modal {
+    height: 350px;
+    width: 90%;
+  }
+}
+
+@media (max-width: 599px) {
+  .item-show {
+    width: 100%;
+  }
+}

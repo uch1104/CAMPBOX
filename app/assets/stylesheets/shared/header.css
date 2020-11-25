@@ -198,3 +198,58 @@ a {
 #open-session {
   cursor: pointer;
 }
+
+@media (max-width: 1024px) {
+  .user-nickname, .lend-item {
+    display: none;
+  }
+
+  .search-form .search-input {
+    width: 120px;
+    height: 40px;
+    font-size: 3px;
+  }
+
+  .search-form .search-btn {
+    width: 36px;
+    background-color: #EE5935;
+    border: none;
+    color: #fff;
+  }
+ }
+
+ @media (max-width: 599px) {
+  .logo-title {
+    width: 250px;
+    height: 30px;
+    font-size: 30px;
+  }
+
+  .search-form {
+    left: 30px;
+    top: 40px;
+    position: absolute;
+  }
+
+  .search-form .search-input {
+    width: 100px;
+    height: 40px;
+    font-size: 3px;
+  }
+
+  .search-form .search-btn {
+    width: 36px;
+    background-color: #EE5935;
+    border: none;
+    color: #fff;
+  }
+
+  header {
+    height: 110px;
+  }
+
+  .header-menu {
+    right: 30px;
+    top: 45px;
+  }
+ }

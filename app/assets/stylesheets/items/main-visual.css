@@ -1,28 +1,12 @@
 .main-image{
-  height: 500px;
-  width: 100%;
-  background-image: url("/images/camp-image.jpeg");
-  background-size: cover;
+  max-width: 100%;
+  height: auto;
+  margin-top: 90px;
 }
 
-.about-inner {
-  width: 1000px;
-  margin: 0 auto;
-}
 
-.about-image {
-  margin: 0 auto;
-  width: 850px;
+@media (max-width: 599px) {
+  .main-image{
+    margin-top: 110px;
+  }
 }
-
-.description-image {
-  width: 850px;
-  mix-blend-mode: multiply;
-}
-
-.about-text {
-  padding: 30px;
-  text-align: center;
-  line-height: 30px;
-}
-

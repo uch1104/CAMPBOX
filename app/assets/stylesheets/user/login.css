@@ -21,7 +21,7 @@
 
 #session-modal {
   background-color: #fff;
-  width: 700px;
+  width: 45%;
   border-radius: 10px;
   position: fixed;
   overflow: auto;
@@ -71,4 +71,20 @@
   text-align: center;
   margin: 15px;
   color: #484848;
+}
+
+@media (max-width: 1024px) {
+  #session-modal {
+    width: 70%;
+  }
+}
+
+@media (max-width: 599px) {
+  #session-modal {
+    width: 90%;
+  }
+
+  .sns-credential {
+    width: 90%;
+  }
 }
