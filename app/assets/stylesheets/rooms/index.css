@@ -93,3 +93,15 @@
   float: right;
 
 }
+
+@media (max-width: 599px) {
+  .message-text {
+    font-size: 12px;
+    width: 75%;
+  }
+
+  .message-send-btn {
+    width: 60px;
+    font-size: 12px;
+  }
+}

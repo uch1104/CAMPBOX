@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  min-width: 500px;
+  width: 100%;
   color: rgb(72, 72, 72);
 }
 
@@ -15,7 +15,6 @@
   border-radius: 3px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
   width: 50%;
-  min-width: 450px;
   padding: 10vh 8vw;
   margin: 150px 0 60px 0;
 }
@@ -51,7 +50,7 @@
 
 .weight-bold-text {
   font-weight: bold;
-  width: 500px;
+  max-width: 100%;
   margin-top: 20px;
 }
 
@@ -109,3 +108,23 @@
   margin-left: -10px;
 }
 
+@media (max-width: 1024px) {
+  .items-rental-title {
+    font-size: 20px;
+  }
+
+  .items-rental-main {
+    width: 80%;
+  }
+
+  .items-rental-title {
+    font-size: 18px;
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 599px) {
+  .item-rental-main {
+    width: 100%;
+  }
+}

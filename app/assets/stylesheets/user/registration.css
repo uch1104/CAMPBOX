@@ -1,6 +1,6 @@
 #select-modal {
   background-color: #fff;
-  width: 650px;
+  width: 40%;
   border-radius: 10px;
   overflow: auto;
   top: 120px;
@@ -33,7 +33,7 @@
 #new-modal {
   background-color: #fff;
   height: 650px;
-  width: 650px;
+  width: 40%;
   border-radius: 10px;
   position: fixed;
   overflow: auto;
@@ -257,8 +257,44 @@
   display: flex;
 }
 
-/* .field_with_errors {
-  display: inline;
-} */
+@media (max-width: 1024px) {
+  #select-modal {
+    width: 70%;
+  }
 
+  #new-modal {
+    width: 70%;
+  }
 
+  .form-wrap {
+    width: 70%;
+  }
+
+  .form-group {
+    width: 70%;
+  }
+}
+
+@media (max-width: 599px) {
+  #select-modal {
+    width: 90%;
+  }
+
+  #new-modal {
+    width: 90%;
+  }
+
+  .form-wrap {
+    width: 90%;
+  }
+
+  .form-group {
+    width: 90%;
+  }
+
+  .form-header {
+    width: 100%;
+    height: 80px;
+    font-size: 18px;
+  }
+}
