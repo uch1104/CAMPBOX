@@ -194,3 +194,15 @@
   padding: 15px 40px;
 }
 
+.my-information-group {
+  width: 55%;
+  display: flex;
+  margin: 0 auto;
+  padding-top: 30px;
+  flex-direction: column;
+}
+
+.my-information-value {
+  font-size: 20px;
+  padding-top: 10px;
+}
