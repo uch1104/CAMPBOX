@@ -56,6 +56,13 @@
   color: #333;
 }
 
+.bell-image {
+  width: 18px;
+  position: absolute;
+  right: 30px;
+  top: 15px;
+}
+
 .mypage-main {
   width: 70%;
   background-color: white;
@@ -168,7 +175,7 @@
 }
 
 .another-page-main {
-  width: 50%;
+  width: 70%;
   background-color: white;
   padding-bottom: 70px;
   display: flex;
@@ -179,7 +186,8 @@
 }
 
 .mypage-dm {
-  margin: 30px auto;
+  margin: 0 auto;
+  margin-top: 50px;
 }
 
 .dm-btn {
@@ -204,6 +212,29 @@
   font-size: 20px;
   padding-top: 10px;
 }
+
+.profile-avatar {
+  margin: 0 auto;
+}
+
+.profile-image {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 30px;
+  margin: 0 auto;
+}
+
+.user-item h2 {
+  font-size: 17px;
+  font-weight: 700;
+  padding: 33px 10px 10px;
+  border-bottom: solid 1px #444;
+  width: 90%;
+  margin: 10px auto;
+}
+
 
 @media (max-width: 1024px) {
   .mypage-nav-list li {

@@ -8,6 +8,16 @@
           マイページ
         </h1>
       </div>
+      <div class="profile-avatar">
+      <% if @user.avatar.attached? %>
+        <%= image_tag @user.avatar, class:'profile-image' %>
+      <% else %>
+        <img src='/images/profile_icon.png', class='profile-image' %>
+      <% end %>
+      </div>
+      <div class="update-btn">
+        <%= link_to "編集する", edit_user_path(current_user.id) %>
+      </div>
       <div class='my-information'>
         <div class="my-information-group">
           <div class='form-text-wrap'>
@@ -44,6 +54,28 @@
           <%= @user.nickname + "さんのページ" %>
         </h1>
       </div>
+      <div class="profile-avatar">
+      <% if @user.avatar.attached? %>
+        <%= image_tag @user.avatar, class:'profile-image' %>
+      <% else %>
+        <img src='/images/profile_icon.png', class='profile-image' %>
+      <% end %>
+      </div>
+      <div class="mypage-dm">
+          <% if @isRoom == true %>
+            <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="dm-btn">メッセージを送る</a>
+          <% else %>
+            <%= form_with model: @room, url: rooms_path, local: true do |f| %>
+              <%= fields_for @entry do |e| %>
+                <%= e.hidden_field :user_id, value: @user.id %>
+              <% end %>
+              <%= f.submit "メッセージを送る", class:"dm-btn"%>
+            <% end %>
+          <% end %>
+      </div>
+      <div class="user-item">
+      <h2>出品アイテム</h2>
+      </div>
       <div class="pickup-list">
         <ul>
           <% @user.items.each do |item| %>
@@ -64,18 +96,6 @@
             </li>
           <%end%>
         </ul>
-      </div>
-      <div class="mypage-dm">
-          <% if @isRoom == true %>
-            <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="dm-btn">メッセージを送る</a>
-          <% else %>
-            <%= form_with model: @room, url: rooms_path, local: true do |f| %>
-              <%= fields_for @entry do |e| %>
-                <%= e.hidden_field :user_id, value: @user.id %>
-              <% end %>
-              <%= f.submit "メッセージを送る", class:"dm-btn"%>
-            <% end %>
-          <% end %>
       </div>
     </div>
   </div>

@@ -49,6 +49,7 @@ class ItemsController < ApplicationController
     if @order.valid?
       pay_item
       @order.save
+      @item.save_notification_order(current_user, @order.id, @item.user_id)
       render :done
     else
       render :order

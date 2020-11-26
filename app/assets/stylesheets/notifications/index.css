@@ -1,0 +1,14 @@
+.notice-list {
+  height: 20%;
+  border-bottom: 1px solid #e1e1e1;
+  font-size: 17px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+.time-ago {
+  font-size: 13px;
+  color: rgb(114, 108, 108);
+  text-align: right;
+  padding-right: 5px;
+}
