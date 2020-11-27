@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_user
   before_action :set_address
 
@@ -28,8 +27,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user.update(user_params)
-      redirect_to user_path(current_user.id)
+    if @user.update(user_params) 
+      redirect_to user_path(@user.id)
     else
       render :edit
     end
@@ -38,7 +37,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :avatar)
+    params.require(:user).permit(:avatar)
   end
 
   def set_user

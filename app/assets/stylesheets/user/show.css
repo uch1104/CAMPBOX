@@ -235,6 +235,22 @@
   margin: 10px auto;
 }
 
+.edit-btn {
+  margin: 10px auto;
+}
+
+.edit-avatar-btn {
+  width: 100%;
+  background: #EE5935;
+  border: 1px solid #EE5935;
+  color: #fff;
+  line-height: 48px;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 10px 10px;
+  border-radius: 3px;
+}
+
 
 @media (max-width: 1024px) {
   .mypage-nav-list li {

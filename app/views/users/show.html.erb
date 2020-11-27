@@ -15,8 +15,8 @@
         <img src='/images/profile_icon.png', class='profile-image' %>
       <% end %>
       </div>
-      <div class="update-btn">
-        <%= link_to "編集する", edit_user_path(current_user.id) %>
+      <div class="edit-btn">
+        <%= link_to "変更する", edit_user_path(current_user.id), class:"edit-avatar-btn" %>
       </div>
       <div class='my-information'>
         <div class="my-information-group">
