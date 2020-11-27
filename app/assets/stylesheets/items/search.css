@@ -19,33 +19,12 @@
 }
 
 .search-list {
-  max-width: 20%;
+  width: 250px;
   margin: 20px 20px 50px 40px;
   background-color: #fff;
   height: auto;
-}
-
-.item-img {
-  height: 33vh; 
-  width: 100%;
-}
-
-.item-name {
-  padding-top: 5px;
-  font-size: 20px;
-  line-height: 1.6em;
-  height: 40px;
-  font-weight: 500;
-  padding-left: 10px;
-  color: rgb(58, 57, 57);
-}
-
-.item-price {
-  font-size: 25px;
-  font-weight: bold;
-  line-height: 1.5em;
-  padding-left: 10px;
-  color: rgb(58, 57, 57);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
 }
 
 @media (max-width: 1024px) {
