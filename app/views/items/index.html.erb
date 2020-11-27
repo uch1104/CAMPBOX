@@ -30,7 +30,6 @@
   </div>
   
   <%= render 'shared/error_messages', model: f.object %>
- 
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">ニックネーム</label>
@@ -64,6 +63,13 @@
     <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
   </div>
   <% end %>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">プロフィール写真</label>
+      <span class="undispensable">任意</span>
+    </div><br>
+    <%= f.file_field :avatar %>
+  </div><br>
   <div class="form-group">
     <p class='form-info-header'>
       本人確認
@@ -209,9 +215,9 @@
                 <%= image_tag item.image, class: "item-img" %>
               </div>
               <div class="item-info">
-                <h2 class="item-name">
+                <div class="item-name">
                   <%= item.name %>
-                </h2>
+                </div>
                 <div class="item-price">
                   <span>¥</span><%= item.price %><span class="stay">/1泊</span>
                 </div>

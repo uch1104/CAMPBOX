@@ -1,4 +1,6 @@
-<div class="mypage-side">
+<div class="mypage-wrap">
+  <div class="mypage-container">
+    <div class="mypage-side">
       <nav class="mypage-nav">
         <ul class="mypage-nav-list">
           <li>
@@ -8,23 +10,15 @@
             <% end %>
           </li>
           <li>
-            <div id='my-item-list'>
-              <div class="mypage-link">出品一覧</div>
-              <span class="material-icons" id="mypage-icon">navigate_next</span>
-            </div>
+            <%= link_to '' do %>
+            <div class="mypage-link">出品一覧</div>
+            <span class="material-icons" id="mypage-icon">navigate_next</span>
+            <% end %>
           </li>
           <li>
-            <%if unchecked_notifications.present?%>
-              <%= link_to notifications_path do %>
-              <div class="mypage-link">お知らせ</div>
-              <img src="/images/bell.png" alt="logo" class="bell-image" >
-              <span class="material-icons" id="mypage-icon">navigate_next</span>
-              <% end %>
-            <% else %>
-              <%= link_to notifications_path do %>
-              <div class="mypage-link">お知らせ</div>
-              <span class="material-icons" id="mypage-icon">navigate_next</span>
-              <% end %>
+            <%= link_to notifications_path do %>
+            <div class="mypage-link">お知らせ</div>
+            <span class="material-icons" id="mypage-icon">navigate_next</span>
             <% end %>
           </li>
           <li>
@@ -75,3 +69,20 @@
       </nav>
  </div>
 
+    <div class='mypage-main'> 
+      <div class='form-header'>
+        <h1 class='form-header-text'>
+          お知らせ一覧
+        </h1>
+      </div>
+      <div class="rooms">
+        <% notifications = @notifications.where.not(visitor_id: current_user.id) %>
+        <% if notifications.exists? %>
+            <%= render notifications %>
+        <% else %>
+            <p>現在、お知らせはありません</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

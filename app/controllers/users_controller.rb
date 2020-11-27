@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :set_user
+  before_action :set_address
 
   def show
     @nickname = current_user.nickname
     @items = current_user.items
-    @address = current_user.address
-    @user = User.find(params[:id])
     @currentUserEntry = Entry.where(user_id: current_user.id)
     @userEntry = Entry.where(user_id: @user.id)
     unless @user.id == current_user.id
@@ -28,16 +27,24 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user.update(user_params)
-      redirect_to user_path(current_user.id)
+    if @user.update(user_params) 
+      redirect_to user_path(@user.id)
     else
-      redirect_to 'edit'
+      render :edit
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:avatar)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def set_address
+    @address = current_user.address
   end
 end

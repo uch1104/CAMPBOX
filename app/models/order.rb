@@ -1,6 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :user
   belongs_to :item
+  has_many :notifications, dependent: :destroy
 
   with_options presence: true do
     validates :rental_start_date
