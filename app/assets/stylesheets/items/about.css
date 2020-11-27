@@ -17,20 +17,24 @@ body {
   font-size: 40px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 60px;
-  padding-top: 20px;
+  margin-bottom: 30px;
+  padding-top: 30px;
 }
 
 .description-image {
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
   mix-blend-mode: multiply;
+  margin: 0 auto;
+  display: block;
+
 }
 
 .about-text {
-  padding: 30px;
+  padding: 50px;
   text-align: center;
   line-height: 30px;
+  margin-top: 20px;
 }
 
 @media (max-width: 1024px) {
