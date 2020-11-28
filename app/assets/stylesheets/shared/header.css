@@ -221,35 +221,49 @@ a {
  @media (max-width: 599px) {
   .logo-title {
     width: 250px;
-    height: 30px;
-    font-size: 30px;
+    height: 40px;
+    font-size: 23px;
+    padding-top: 6px;
   }
 
   .search-form {
-    left: 30px;
-    top: 40px;
+    left: 03px;
+    top: 3px;
     position: absolute;
   }
 
   .search-form .search-input {
-    width: 100px;
-    height: 40px;
+    width: 70px;
+    height: 30px;
     font-size: 3px;
   }
 
   .search-form .search-btn {
-    width: 36px;
+    width: 30px;
     background-color: #EE5935;
     border: none;
     color: #fff;
-  }
-
-  header {
-    height: 110px;
+    height: 30px;
+    font-size: 13px;
   }
 
   .header-menu {
-    right: 30px;
-    top: 45px;
+    right: 8px;
+    top: 8px;
+  }
+
+  header {
+    height: 70px;
+  }
+
+  .lists-right {
+  }
+
+  .lists-right li {
+    padding: 0;
+  }
+
+  #open {
+    padding: 0;
   }
  }
