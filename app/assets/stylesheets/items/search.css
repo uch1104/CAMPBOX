@@ -30,7 +30,21 @@
 @media (max-width: 1024px) {
   .search-list {
     width: 150px;
-    margin: 20px 10px 50px 20px;
+    margin: 20px 10px 50px 10px;
     background-color: #fff;
+  }
+}
+
+@media (max-width: 599px) {
+  .search-list {
+    width: 130px;
+    margin: 20px 10px 20px 10px;
+  }
+
+  .search-item h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-left: 20px;
   }
 }
