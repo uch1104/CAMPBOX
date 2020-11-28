@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get 'search'
       get 'divide'
     end
+    resource :favorites, only: [:create, :destroy]
   end
   resources :users, only: [:show, :edit, :update]
   resources :cards, only: [:new, :create, :show]
