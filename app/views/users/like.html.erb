@@ -1,0 +1,38 @@
+<div class="mypage-wrap">
+  <div class="mypage-container">
+    <%= render "shared/mypage_side" %>
+    <div class='mypage-main'>  
+      <div class='form-header'>
+        <h1 class='form-header-text'>
+          お気に入りアイテム一覧
+        </h1>
+      </div>
+      <div class="pickup-list">
+        <ul>
+          <% @favorite_items.each do |item| %>
+            <li class="list">
+              <%= link_to item_path(item.id) do %>
+                <div class="item-img-content">
+                  <%= image_tag item.image, class: "item-img" %>
+                </div>
+                <div class="item-info">
+                  <div class="item-name">
+                    <%= item.name %>
+                  </div>
+                  <div class="item-lower">
+                    <div class="item-price">
+                      <span>¥</span><%= item.price %><span class="stay">/1泊</span>
+                    </div>
+                    <div class="like-item" id="favorite-buttons<%= item.id %>">
+                      <%= render partial: 'favorites/favorite', locals: { item: item } %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </li>
+          <%end%>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

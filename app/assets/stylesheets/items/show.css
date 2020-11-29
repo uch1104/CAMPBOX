@@ -228,7 +228,7 @@
 }
 
 .favorite-image {
-  width: 35px;
+  width: 30px;
   mix-blend-mode: multiply;
 }
 
@@ -251,10 +251,26 @@
     height: 350px;
     width: 90%;
   }
+
+  .favorite-image {
+    width: 20px;
+  }
+
+  .favorite-text {
+    font-size: 12px;
+  }
+  
+  .no-favorite-text {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 599px) {
   .item-show {
     width: 100%;
+  }
+
+  .favorite-image {
+    width: 15px;
   }
 }

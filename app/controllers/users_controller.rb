@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   before_action :set_address
 
   def show
-    @favorite_items = @user.favorite_items
     @nickname = current_user.nickname
     @items = current_user.items
     @currentUserEntry = Entry.where(user_id: current_user.id)
@@ -33,6 +32,10 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def like
+    @favorite_items = @user.favorite_items
   end
 
   private

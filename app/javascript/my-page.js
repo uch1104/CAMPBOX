@@ -8,7 +8,6 @@ const change = () => {
 
   myItem.addEventListener('click', () => {
     myPage.classList.add('hidden');
-    // noticeList.classList.add('hidden');
     itemList.classList.remove('hidden');
   });
 
