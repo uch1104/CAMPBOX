@@ -222,6 +222,26 @@
   height: 100vh;
 }
 
+.favorite-item {
+  float: left;
+  padding: 9px 20px 0 0;
+}
+
+.favorite-image {
+  width: 35px;
+  mix-blend-mode: multiply;
+}
+
+.favorite-text {
+  font-size: 16px;
+  color: rgb(223, 86, 86);
+}
+
+.no-favorite-text {
+  font-size: 16px;
+  color: rgb(72, 72, 72);
+}
+
 @media (max-width: 1024px) {
   .item-show {
     width: 80%;

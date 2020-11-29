@@ -56,6 +56,24 @@
     <p class='or-text'>or</p>
     <%= link_to '削除する', item_path(@item.id), method: :delete, class:'destroy-item-btn' %>
   <% else %>
+    <div class="favorite-item">
+      <% if user_signed_in? %>
+        <% if @item.favorited_by?(current_user) %> 
+            <%=link_to item_favorites_path(@item.id), method: :delete do %>
+            <img src="/images/favorite-red.jpeg" alt="favorite" class="favorite-image">
+            <span class="favorite-text"><%= @item.favorites.count %></span>
+            <% end %>
+        <% else %>
+            <%=link_to item_favorites_path(@item.id), method: :post do %>
+            <img src="/images/favorite.jpeg" alt="favorite" class="favorite-image">
+            <span class="no-favorite-text"><%= @item.favorites.count %></span>
+            <% end %>
+        <% end %>
+      <% else %>
+        <img src="/images/favorite-red.jpeg" alt="favorite" class="favorite-image">
+        <span class="favorite-text"><%= @item.favorites.count %></span>
+      <% end %>
+    </div>
     <button type="button" id="rental-btn">
       <span>レンタルする</span>
     </button>
