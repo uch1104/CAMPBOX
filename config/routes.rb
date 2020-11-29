@@ -16,7 +16,11 @@ Rails.application.routes.draw do
     end
     resource :favorites, only: [:create, :destroy]
   end
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update] do
+    member do
+      get 'like'
+    end
+  end
   resources :cards, only: [:new, :create, :show]
   resources :addresses
   resources :messages, only: [:create, :destroy]
