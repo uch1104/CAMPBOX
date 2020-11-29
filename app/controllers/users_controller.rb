@@ -34,6 +34,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def like
+    @favorite_items = @user.favorite_items
+  end
+
   private
 
   def user_params

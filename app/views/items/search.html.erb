@@ -12,8 +12,13 @@
               <h2 class="item-name">
                 <%= item.name %>
               </h2>
-              <div class="item-price">
-                <span>¥</span><%= item.price %><span class="stay">/1泊</span>
+              <div class="item-lower">
+                <div class="item-price">
+                  <span>¥</span><%= item.price %><span class="stay">/1泊</span>
+                </div>
+                <div class="like-item" id="favorite-buttons<%= item.id %>">
+                  <%= render partial: 'favorites/favorite', locals: { item: item } %>
+                </div>
               </div>
             </div>
           <% end %>

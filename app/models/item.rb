@@ -10,6 +10,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_method
   belongs_to_active_hash :category
   has_many :notifications, dependent: :destroy
+  has_many :favorites
 
   with_options presence: true do
     validates :image
@@ -63,4 +64,9 @@ class Item < ApplicationRecord
       action: 'order'
     )
   end
+  
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
+  
 end

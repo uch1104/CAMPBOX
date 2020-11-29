@@ -206,27 +206,7 @@
     <div class="pickup">
       <h2>新着のアイテム</h2>
     </div>
-    <div class="pickup-list">
-      <ul>
-        <% @items.each do |item| %>
-          <li class="list">
-            <%= link_to item_path(item.id) do %>
-              <div class="item-img-content">
-                <%= image_tag item.image, class: "item-img" %>
-              </div>
-              <div class="item-info">
-                <div class="item-name">
-                  <%= item.name %>
-                </div>
-                <div class="item-price">
-                  <span>¥</span><%= item.price %><span class="stay">/1泊</span>
-                </div>
-              </div>
-            <% end %>
-          </li>
-        <%end%>
-      </ul>
-    </div>
+    <%= render 'shared/pickup-list' %>
   </div>
   <div class="main-right">
     <div class="item-category">
