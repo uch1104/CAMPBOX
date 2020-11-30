@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   def index
     @user = User.new
     @items = Item.includes(:user).order('created_at DESC').page(params[:page]).per(4)
+    @tags = Item.tag_counts_on(:tags).most_used(20)
   end
 
   def new
