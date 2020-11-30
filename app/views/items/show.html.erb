@@ -24,6 +24,14 @@
         <div class="detail-value"><%= @item.category.name %></div>
       </div>
       <div class="item-detail">
+        <div class="detail-title">タグ</div>
+        <div class="detail-value">
+          <% @item.tag_list.each do |tag| %>
+          <%= link_to tag, search_items_path(tag_name: tag), class: "tag-text" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="item-detail">
         <div class="detail-title">状態</div>
         <div class="detail-value"><%= @item.condition.name %></div>
       </div>

@@ -62,6 +62,9 @@ class ItemsController < ApplicationController
 
   def search
     @items = Item.search(params[:keyword]).order('created_at DESC')
+    if params[:tag_name]
+      @items = Item.tagged_with("#{params[:tag_name]}")
+    end
   end
 
   def divide
@@ -71,7 +74,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:image, :name, :price, :description, :precaution, :condition_id, :cost_id, :prefecture_id, :shipping_method_id, :category_id, :start_date, :limit_date).merge(user_id: current_user.id)
+    params.require(:item).permit(:image, :name, :price, :description, :precaution, :condition_id, :cost_id, :prefecture_id, :shipping_method_id, :category_id, :start_date, :limit_date, :tag_list).merge(user_id: current_user.id)
   end
 
   def set_item
