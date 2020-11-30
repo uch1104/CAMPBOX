@@ -22,7 +22,7 @@
         品名
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"品名（必須 40文字まで)", maxlength:"40" %>
+      <%= f.text_area :name, class:"items-text", id:"new-item-name", placeholder:"品名（必須 30文字まで)", maxlength:"30" %>
       <div class="items-explain">
         <div class="weight-bold-text">
           説明
@@ -39,9 +39,9 @@
       </div>
       <div class="weight-bold-text">
         タグ
-        <span class="indispensable">必須</span>
+        <span class="undispensable">任意</span>
       </div>
-      <%= f.text_field :tag_list, value: @item.tag_list.join(","), class:"items-text" %>
+      <%= f.text_field :tag_list, value: @item.tag_list.join(","), placeholder:" 例）初心者におすすめ, ソロキャンプ" ,class:"items-text" %>
     </div>
 
     <div class="items-detail">
