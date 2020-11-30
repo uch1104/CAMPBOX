@@ -1,0 +1,109 @@
+<section class="main-visual">
+  <img src="/images/camp-image.jpeg" class="main-image">
+
+<section class="about">
+  <div class="about-inner">
+    <h2 class="about-title">
+    CAMP BOX とは？
+    </h2>
+    <div class="about-image">
+      <img src="/images/campbox.png" class="description-image">
+    </div>
+    <p class="about-text">
+      「CAMP BOX」はキャンプ用品のシェアリングサービスです。<br>
+      「キャンプ用品買ったけど、年に数回しか使わない。」<br>
+      「キャンプに行きたいけど、キャンプ用品を揃えるにはお金がかかる。」<br>
+      「買いたい商品を一度試してみたい。」<br>
+      そんな悩みを一気に解決できるのが「CAMP BOX」です。<br>
+      もっと気軽にキャンプを楽しめるサービスを実現します。
+    </p>
+  </div>
+</section>
+
+
+<div class="main-item">
+  <div class="main-left">
+    <div class="pickup">
+      <h2>新着のアイテム</h2>
+    </div>
+    <%= render 'shared/pickup-list' %>
+    <div class="pagination"><%= paginate @items %></div>
+  </div>
+  <div class="main-right">
+    <div class="item-category">
+      <h2>キャンプ用品一覧</h2>
+      <ul>
+        <li class="category-list">
+          <%= link_to '/items/divide?category_id=2' do %>
+          <div class="category-link">テント</div>
+          <% end %>
+        </li>
+        <li class="category-list">
+          <%= link_to '/items/divide?category_id=3' do %>
+          <div class="category-link">タープ</div>
+          <% end %>
+        </li>
+        <li class="category-list">
+          <%= link_to '/items/divide?category_id=4' do %>
+          <div class="category-link">シェラフ・寝具</div>
+          <% end %>
+        </li>
+        <li class="category-list">
+          <%= link_to '/items/divide?category_id=5' do %>
+          <div class="category-link">テーブル</div>
+          <% end %>
+        </li>
+        <li class="category-list">
+          <%= link_to '/items/divide?category_id=6' do %>
+          <div class="category-link">チェア</div>
+          <% end %>
+        </li>
+        <li class="category-list">
+          <%= link_to '/items/divide?category_id=7' do %>
+          <div class="category-link">ランタン・照明器具</div>
+          <% end %>
+        </li>
+        <li class="category-list">
+          <%= link_to '/items/divide?category_id=8' do %>
+          <div class="category-link">調理道具</div>
+          <% end %>
+        </li>
+        <li class="category-list">
+          <%= link_to '/items/divide?category_id=9' do %>
+          <div class="category-link">暖房器具</div>
+          <% end %>
+        </li>
+        <li class="category-list">
+          <%= link_to '/items/divide?category_id=10' do %>
+          <div class="category-link">コット</div>
+          <% end %>
+        </li>
+        <li class="category-list">
+          <%= link_to '/items/divide?category_id=11' do %>
+          <div class="category-link">電化製品</div>
+          <% end %>
+        </li>
+        <li class="category-list">
+          <%= link_to '/items/divide?category_id=12' do %>
+          <div class="category-link">キャンプセット</div>
+          <% end %>
+        </li>
+        <li class="category-list">
+          <%= link_to '/items/divide?category_id=13' do %>
+          <div class="category-link">その他</div>
+          <% end %>
+        </li>
+      </ul>
+    </div><br><br>
+    <div class="item-category">
+      <h2>おすすめのタグ</h2>
+       <ul>
+          <% @tags.each do |tag| %>
+          <li class="category-list">
+            <%= link_to tag, search_items_path(tag_name: tag.name), class: "category-link" %>
+          </li>
+          <% end %>
+        </ul>
+    </div>
+  </div>
+</div>

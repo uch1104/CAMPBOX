@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_user
   before_action :set_address
 
   def show
     @nickname = current_user.nickname
-    @items = current_user.items
+    @items = @user.items.page(params[:page]).per(4)
     @currentUserEntry = Entry.where(user_id: current_user.id)
     @userEntry = Entry.where(user_id: @user.id)
     unless @user.id == current_user.id

@@ -3,6 +3,8 @@ class Item < ApplicationRecord
   has_one_attached :image
   has_many :order
 
+  acts_as_taggable
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :condition
   belongs_to_active_hash :cost

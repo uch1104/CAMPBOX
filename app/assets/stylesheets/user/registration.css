@@ -257,6 +257,11 @@
   display: flex;
 }
 
+.link_to_top_page {
+  text-align: center;
+  margin-top: 20px;
+}
+
 @media (max-width: 1024px) {
   #select-modal {
     width: 70%;
@@ -264,6 +269,7 @@
 
   #new-modal {
     width: 70%;
+    height: 80%;
   }
 
   .form-wrap {
@@ -282,6 +288,7 @@
 
   #new-modal {
     width: 90%;
+    height: 80%;
   }
 
   .form-wrap {

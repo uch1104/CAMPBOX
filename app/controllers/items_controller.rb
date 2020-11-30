@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   def index
     @user = User.new
     @items = Item.includes(:user).order('created_at DESC').page(params[:page]).per(4)
+    @tags = Item.tag_counts_on(:tags).most_used(20)
   end
 
   def new
@@ -61,17 +62,20 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.search(params[:keyword]).order('created_at DESC')
+    @items = Item.search(params[:keyword]).order('created_at DESC').page(params[:page]).per(8)
+    if params[:tag_name]
+      @items = Item.tagged_with("#{params[:tag_name]}").order('created_at DESC').page(params[:page]).per(8)
+    end
   end
 
   def divide
-    @items = Item.where(category_id: params[:category_id]).order('created_at DESC')
+    @items = Item.where(category_id: params[:category_id]).order('created_at DESC').page(params[:page]).per(8)
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:image, :name, :price, :description, :precaution, :condition_id, :cost_id, :prefecture_id, :shipping_method_id, :category_id, :start_date, :limit_date).merge(user_id: current_user.id)
+    params.require(:item).permit(:image, :name, :price, :description, :precaution, :condition_id, :cost_id, :prefecture_id, :shipping_method_id, :category_id, :start_date, :limit_date, :tag_list).merge(user_id: current_user.id)
   end
 
   def set_item
