@@ -62,14 +62,14 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.search(params[:keyword]).order('created_at DESC')
+    @items = Item.search(params[:keyword]).order('created_at DESC').page(params[:page]).per(8)
     if params[:tag_name]
-      @items = Item.tagged_with("#{params[:tag_name]}")
+      @items = Item.tagged_with("#{params[:tag_name]}").order('created_at DESC').page(params[:page]).per(8)
     end
   end
 
   def divide
-    @items = Item.where(category_id: params[:category_id]).order('created_at DESC')
+    @items = Item.where(category_id: params[:category_id]).order('created_at DESC').page(params[:page]).per(8)
   end
 
   private
