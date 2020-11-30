@@ -8,10 +8,10 @@
             <% end %>
           </li>
           <li>
-            <div id='my-item-list'>
-              <div class="mypage-link">出品一覧</div>
-              <span class="material-icons" id="mypage-icon">navigate_next</span>
-            </div>
+            <%= link_to users_path do %>
+            <div class="mypage-link">出品一覧</div>
+            <span class="material-icons" id="mypage-icon">navigate_next</span>
+            <% end %>
           </li>
           <li>
             <%if unchecked_notifications.present?%>

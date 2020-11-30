@@ -11,7 +11,6 @@ require("../menu-click")
 require("../registration")
 require("../card")
 require("../rental")
-require("../my-page")
 require("jquery")
 
 

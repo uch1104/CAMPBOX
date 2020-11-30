@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user
+  before_action :set_user,only: [:show, :edit, :update, :like]
   before_action :set_address
+
+  def index
+    @items = current_user.items.page(params[:page]).per(4)
+  end
 
   def show
     @nickname = current_user.nickname
@@ -36,7 +40,7 @@ class UsersController < ApplicationController
   end
 
   def like
-    @favorite_items = @user.favorite_items
+    @favorite_items = @user.favorite_items.page(params[:page]).per(4)
   end
 
   private
