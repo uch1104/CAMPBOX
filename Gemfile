@@ -75,6 +75,4 @@ gem 'active_hash'
 gem 'kaminari'
 gem 'payjp'
 gem 'jquery-rails'
-
-
-
+gem 'acts-as-taggable-on', '~> 6.0'
