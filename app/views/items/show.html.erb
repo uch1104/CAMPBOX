@@ -1,5 +1,8 @@
 <div class="item-show-wrapper">
   <div class="item-show">
+    <div class="favorite-item" id="favorite-buttons<%= @item.id %>">
+      <%= render partial: 'favorites/favorite', locals: { item: @item } %>
+    </div>
     <div class="item-image-content">
       <%= image_tag @item.image ,class:"item-box-img" %>
     </div>
@@ -64,9 +67,6 @@
     <p class='or-text'>or</p>
     <%= link_to '削除する', item_path(@item.id), method: :delete, class:'destroy-item-btn' %>
   <% else %>
-    <div class="favorite-item" id="favorite-buttons<%= @item.id %>">
-      <%= render partial: 'favorites/favorite', locals: { item: @item } %>
-    </div>
     <button type="button" id="rental-btn">
       <span>レンタルする</span>
     </button>
