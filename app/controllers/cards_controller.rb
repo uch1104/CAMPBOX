@@ -33,9 +33,4 @@ class CardsController < ApplicationController
     @address = current_user.address
   end
 
-  private
-
-  def set_address
-    @address = current_user.address
-  end
 end
