@@ -4,7 +4,7 @@ class CardsController < ApplicationController
   end
 
   def create
-    Payjp.api_key = Rails.application.credentials.PAYJP['PAYJP_SECRET_KEY']
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     customer = Payjp::Customer.create(
       description: 'test',
       card: params[:card_token]
@@ -23,7 +23,7 @@ class CardsController < ApplicationController
   end
 
   def show
-    Payjp.api_key = Rails.application.credentials.PAYJP['PAYJP_SECRET_KEY']
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     card = Card.find_by(user_id: current_user)
 
     redirect_to new_card_path and return unless card.present?
