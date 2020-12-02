@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user,only: [:show, :edit, :update, :like]
+  before_action :set_user, only: [:show, :edit, :update, :like]
   before_action :set_address
 
   def index
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     unless @user.id == current_user.id
       @currentUserEntry.each do |cu|
         @userEntry.each do |u|
-          if cu.room_id == u.room_id then
+          if cu.room_id == u.room_id
             @isRoom = true
             @roomId = cu.room_id
           end
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update(user_params) 
+    if @user.update(user_params)
       redirect_to user_path(@user.id)
     else
       render :edit

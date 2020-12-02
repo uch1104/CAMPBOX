@@ -32,5 +32,4 @@ class CardsController < ApplicationController
     @card = customer.cards.first
     @address = current_user.address
   end
-
 end

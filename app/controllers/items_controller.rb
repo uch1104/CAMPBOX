@@ -63,9 +63,7 @@ class ItemsController < ApplicationController
 
   def search
     @items = Item.search(params[:keyword]).order('created_at DESC').page(params[:page]).per(8)
-    if params[:tag_name]
-      @items = Item.tagged_with("#{params[:tag_name]}").order('created_at DESC').page(params[:page]).per(8)
-    end
+    @items = Item.tagged_with(params[:tag_name].to_s).order('created_at DESC').page(params[:page]).per(8) if params[:tag_name]
   end
 
   def divide
@@ -104,4 +102,3 @@ class ItemsController < ApplicationController
     redirect_to new_user_session_path unless user_signed_in?
   end
 end
-
