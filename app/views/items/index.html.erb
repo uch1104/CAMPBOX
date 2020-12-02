@@ -171,6 +171,9 @@
     <li><img src="images/google.png" alt="logo" width="30px" height="30px"　align="middle"></li>
     <li><%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post, class:"sns-btn"%></li>
   </ul>
+  <ul class="guest-login">
+    <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class:"guest-btn" %>
+  </ul>
 </div>
 <% end %>
 
