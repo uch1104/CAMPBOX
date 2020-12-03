@@ -5,6 +5,8 @@ class CreateNotifications < ActiveRecord::Migration[6.0]
       t.integer :visited_id, null: false
       t.integer :item_id
       t.integer :order_id
+      t.integer :room_id
+      t.integer :message_id
       t.string  :action, default: '', null: false
       t.boolean :checked, default: false, null: false
 
@@ -15,5 +17,7 @@ class CreateNotifications < ActiveRecord::Migration[6.0]
     add_index :notifications, :visited_id
     add_index :notifications, :item_id
     add_index :notifications, :order_id
+    add_index :notifications, :room_id
+    add_index :notifications, :message_id
   end
 end

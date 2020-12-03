@@ -101,6 +101,7 @@ body {
   margin-right: 6px;
   margin-bottom: 10px;
   display: block;
+  transition: 0.3s;
 }
 
 .category-link:hover {

@@ -3,9 +3,11 @@
 <img src="/images/lantern.png", alt="logo", class="lantern-image" >
 <div class="notice-list" id="notice-lists">
   <%= link_to visitor.nickname, user_path(visitor) %>
-  さんが
+  さん
   <% if notification.action=='order' %>
-      あなたの<%= link_to notification.item.name, item_path(notification.item_id) %>を<%= notification.order.rental_start_date %>〜<%= notification.order.rental_limit_date %>にレンタル予約しました。
+      があなたの<%= link_to notification.item.name, item_path(notification.item_id) %>を<%= notification.order.rental_start_date %>〜<%= notification.order.rental_limit_date %>にレンタル予約しました。
+  <% elsif notification.action=='dm'%>
+      からメッセージが届きました。
   <% end %>
   <div class="time-ago"><%= time_ago_in_words(notification.created_at) %>前</div>
 </div>
