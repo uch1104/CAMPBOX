@@ -106,12 +106,16 @@ ActiveRecord::Schema.define(version: 2020_11_30_054061) do
     t.integer "visited_id", null: false
     t.integer "item_id"
     t.integer "order_id"
+    t.integer "room_id"
+    t.integer "message_id"
     t.string "action", default: "", null: false
     t.boolean "checked", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["item_id"], name: "index_notifications_on_item_id"
+    t.index ["message_id"], name: "index_notifications_on_message_id"
     t.index ["order_id"], name: "index_notifications_on_order_id"
+    t.index ["room_id"], name: "index_notifications_on_room_id"
     t.index ["visited_id"], name: "index_notifications_on_visited_id"
     t.index ["visitor_id"], name: "index_notifications_on_visitor_id"
   end
@@ -128,7 +132,6 @@ ActiveRecord::Schema.define(version: 2020_11_30_054061) do
   end
 
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
