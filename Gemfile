@@ -54,7 +54,7 @@ group :development do
   # gem 'better_errors'
   # gem 'binding_of_caller'
   # gem 'awesome_rails_console'
-  # gem 'rails-erd'
+  gem 'rails-erd'
 end
 
 group :test do
