@@ -1,0 +1,30 @@
+version: "3"
+services:
+  db:
+    image: mysql:5.6
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: root
+    ports:
+      - "4306:3306"
+
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/camp-out
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:-default}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:-default}
+      PAYJP_SECRET_KEY: ${PAYJP_SECRET_KEY:-default}
+      PAYJP_PUBLIC_KEY: ${PAYJP_PUBLIC_KEY:-default}
+      FACEBOOK_CLIENT_ID: ${FACEBOOK_CLIENT_ID:-default}
+      FACEBOOK_CLIENT_SECRET: ${FACEBOOK_CLIENT_SECRET:-default}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-default}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-default}
+    tty: true
+    stdin_open: true
