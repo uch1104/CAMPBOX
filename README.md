@@ -62,7 +62,7 @@ http://campbox.site/
 
 ## インフラ構成図
 
-[![Image from Gyazo](https://i.gyazo.com/02398efc17d646142f7ce7d1e62f528d.png)](https://gyazo.com/02398efc17d646142f7ce7d1e62f528d)
+[![Image from Gyazo](https://i.gyazo.com/0a313af191130900ec1b02000a68a879.png)](https://gyazo.com/0a313af191130900ec1b02000a68a879)
 
 ## データベース設計
 
