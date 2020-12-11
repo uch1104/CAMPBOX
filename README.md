@@ -1,4 +1,6 @@
 # [CAMP BOX](http://campbox.site/)
+[![Image from Gyazo](https://i.gyazo.com/33f4e11d6e3675213eafaef4a905376d.jpg)](https://gyazo.com/33f4e11d6e3675213eafaef4a905376d)
+
 ## 概要
 「CAMP BOX」はキャンプ用品のシェアリングサービスです。
 
@@ -53,11 +55,15 @@ http://campbox.site/
     * テスト：RSpec
     * 静的コード解析：Rubocop
 * データベース：MySQL
-* インフラ：AWS（VPC | ALB | EC2 | S3 | Route53 | ACM）
+* インフラ：AWS（VPC | ALB | EC2 | S3 | Route53 | ACM）Docker
 * ソースコード管理：GitHub
 * Webサーバ：Nginx
 * アプリケーションサーバ：Unicorn
 
-# データベース設計
+## インフラ構成図
+
+[![Image from Gyazo](https://i.gyazo.com/02398efc17d646142f7ce7d1e62f528d.png)](https://gyazo.com/02398efc17d646142f7ce7d1e62f528d)
+
+## データベース設計
 
 [![Image from Gyazo](https://i.gyazo.com/90455321bdc2c1d87edc9fb541975326.png)](https://gyazo.com/90455321bdc2c1d87edc9fb541975326)
